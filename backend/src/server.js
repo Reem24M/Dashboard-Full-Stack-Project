@@ -3,6 +3,7 @@ import cors from 'cors'
 import dotenv from 'dotenv'
 import connectDB from '../config/db.js'
 import authRoutes from '../Routes/authRoute.js'
+import productRoutes from '../Routes/productRoute.js'
 dotenv.config()
 
 connectDB();
@@ -13,6 +14,7 @@ app.use(cors())
 app.use(express.json())
 
 app.use('/auth',authRoutes)
+app.use('/products',productRoutes)
 const PORT=process.env.PORT 
 
 app.get("/",(req,res)=>{
